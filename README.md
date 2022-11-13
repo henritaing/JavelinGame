@@ -1,2 +1,0 @@
-# JavelinGame
-DevWeb Project 
