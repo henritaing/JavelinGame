@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pour importer la bibliothèque Bootstrap : -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Pour relier notre html à notre css : -->
+    <link href="main.css" rel="stylesheet">
+
+    <title>Javelin Game</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <header class="h1 text-center">Lancer de Javelot</header>
+            
+            <!-- Accordéon pour les règles du jeu : -->
+            <div class="accordion accordion-flush" id="Deroulant_Regles">
+                <div class="accordion-item" theme-colors="Primary">
+                    <h2 class="accordion-header" id="regles">
+                        <button class="accordion-button collapsed text-bg-primary p-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Règles du jeu
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse text-bg-info p-3" aria-labelledby="regles" data-bs-parent="#Deroulant_Regles">
+                        <div class="accordion-body">
+                            Commencez par lancer les 6 dés. Écartez alors au moins un dé. Si vous le désirez, relancez tous les autres. Vous
+                            pouvez réitérer l’opération plusieurs fois, à la condition de toujours écarter au moins un dé à chaque coup. Mais
+                            attention : seuls les dés de valeur impaire peuvent être écartés. Essayez de conserver ainsi les dés de valeur
+                            élevée.
+                            À tout moment, vous pouvez décider d’interrompre vos lancers et de conclure là votre tentative. Par ailleurs une
+                            tentative s’achève automatiquement quand les six dés se trouvent écartés.
+                            Si, après un lancer, vous n’êtes plus en mesure d’écarter un nouveau dé parce que tous montrent une valeur paire,
+                            votre tentative se solde par un échec
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Demander le nom du joueur : -->
+            <div class="row">
+                <div class="col-md-8">
+                    <input class="form-control form-control-lg" type="text" id="nom_joueur" placeholder="Nom du joueur">
+                </div>
+                <div class="col-md-4 text-center">
+                    <input type="button" value="C'est parti !" class="btn btn-primary" id="btn_lancement">
+                    <!-- <button  type="button" class="btn btn-primary">C'est parti !</button> -->
+                    <!-- <div>
+                        Les dés sont lancés
+                    </div> -->
+                </div>
+                <h2 id="affiche_nom_joueur"> </h2> <!--contiendra le nom du joueur -->
+                <h2 id="resultat_lancer_1"></h2> <!--contiendra le résultats des 6 dés correspondant au 1er lancer-->
+
+                
+            </div>
+            
+    
+        </div>
+
+    </div>
+
+
+    
+    <script>
+        //affichage du nom du joueur
+        var btn = document.getElementById('btn_lancement');
+        var nom_joueur = document.getElementById("nom_joueur");
+        btn.addEventListener('click', updateBtn);
+
+        function updateBtn() {
+            document.getElementById("affiche_nom_joueur").textContent = "Nom du joueur : " + nom_joueur.value
+            // document.getElementById("resultat_premier_lancer").innerHTML = "Résultats du premier lancer de dés :" + 
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
