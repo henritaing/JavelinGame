@@ -1,26 +1,32 @@
-const { randomInt } = require("crypto");
+function lancerde() {
+    return Math.floor(Math.random() * 6 + 1); 
+  }
 
-function test(){
-    console.log("ca marche")
+tableau = [[lancerde(), false], [lancerde(), false], [lancerde(), false], [lancerde(), false], [lancerde(), false], [lancerde(), false]]
+
+function gelerunde(tableau, index){
+    tableau[index-1][1] = true;
+    return tableau
 }
 
-function premier_lancer(){
-    L = []
-    for(var i = 0; i < 6; i++){
-        L.append(randomInt(6))
+function relancer(tableau) {
+    for(var i = 0; i < nb_des; i++){
+        if(tableau[i][1] = false){
+            tableau[i][0] = lancer();
+        }
     }
-    return L
+    return tableau
 }
 
-function lancer(nb_dices){      //fonction renvoyant la liste des récultats des dés lancés
-    L = []
-    for (var i=0; i < nb_dices; i++){
-        L.append(randomInt(6))
+function somme(tableau){
+    S = 0;
+    for(var i = 0; i < L.length; i++){
+        S = S + L[i][0];
     }
-    return L 
+    return S
 }
 
 
-module.exports = {
-    tour_1 : premier_lancer,
-}
+
+
+
